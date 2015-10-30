@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html  lang="en" ng-app="starterKit">
+<head>
+    <meta charset="utf-8">
+    <title>StarterKit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="StarterKit">
+
+    <!-- build:css css/globals.css -->
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+    <link href="css/4-col-portfolio.css" rel="stylesheet">
+    <!-- endbuild -->
+
+    <!-- build:less css/styles.css -->
+    <link rel="stylesheet/less" type="text/css" href="less/styles.less">
+    <!-- endbuild -->
+
+</head>
+<body>
+<div ui-view></div>
+</body>
+
+<!-- build:remove -->
+<script src="../bower_components/less/dist/less.min.js"></script>
+<!-- endbuild -->
+
+
+<!-- build:js js/app.js -->
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="../bower_components/angular-ui-validate/dist/validate.min.js"></script>
+
+<script src="app.startup.js"></script>
+<script src="directives/ngEnter.directive.js"></script>
+<script src="controllers/home.controller.js"></script>
+<script src="controllers/profile.controller.js"></script>
+<script src="controllers/navBar.controller.js"></script>
+
+<script src="../models/school.js"></script>
+
+<!-- Engine -->
+<script src="../app_engine/common/common.module.js"></script>
+
+<!-- Engine business -->
+<script src="../app_engine/common/data/data.module.js"></script>
+<script src="../app_engine/common/data/data.user.js"></script>
+
+<!-- Engine data -->
+<script src="../app_engine/common/business/business.module.js"></script>
+<script src="../app_engine/common/business/business.user.js"></script>
+
+<!-- endbuild -->
+
+</html>

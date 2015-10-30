@@ -1,0 +1,13 @@
+<ng-include src="'views/navBar.html'"></ng-include>
+
+<div id="container-profile " class="container">
+
+    <form name="test" ng-submit="test.$valid && launchJob()">
+        <input type="text" name="name" required ui-validate-async="{valid:'isValid($value)'}" ng-model="user.name" ng-enter="launchJob()"
+        />
+
+        <span ng-show="test.name.$error.required && submit">Nom obligatoire</span>
+        <span ng-show="test.name.$error.valid">Trop court</span>
+        <input type="submit" ng-click="submit = true">
+    </form>
+</div>
