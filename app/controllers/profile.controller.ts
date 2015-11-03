@@ -1,4 +1,4 @@
-/// <reference path="../../reference.ts"/>
+/// <reference path='../../reference.ts'/>
 
 namespace app {
 	'use strict';
@@ -14,20 +14,23 @@ namespace app {
 		/**
 		 *
 		 */
-		constructor(private $scope: IProfileControllerScope) {
-			this.$scope.description = "A big project";
-			this.$scope.name = "developer developer";
-			this.$scope.schools = [new models.School("school 1"), new models.School("school 2")];
-			
+		private $scope: IProfileControllerScope;
+
+		constructor($scope: IProfileControllerScope) {
+			this.$scope = $scope;
+			this.$scope.description = 'A big project';
+			this.$scope.name = 'developer developer';
+			this.$scope.schools = [new models.School('school 1'), new models.School('school 2')];
+
 			this.$scope.send = () => {
 				return this.returnWork();
-			}
+			};
 		}
-		
+
 		private returnWork(): void {
-			alert("end job");
+			alert('end job');
 		}
 	}
 
-	angular.module('starterKit').controller("ProfileController", ["$scope", ProfileController]);
+	angular.module('starterKit').controller('ProfileController', ['$scope', ProfileController]);
 }

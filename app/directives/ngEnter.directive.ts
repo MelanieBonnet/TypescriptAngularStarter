@@ -1,7 +1,7 @@
-/// <reference path="../../reference.ts"/>
+/// <reference path='../../reference.ts'/>
 
-module app.directive {
-	"use strict";
+namespace app.directive {
+	'use strict';
 
 	interface INgEnterDirectiveScope extends ng.IScope { }
 
@@ -11,27 +11,31 @@ module app.directive {
 
 	export class NgEnter implements ng.IDirective {
 
-		constructor() {	}
+		constructor() {
+			//
+		}
 
-		link = (scope: INgEnterDirectiveScope, element: ng.IAugmentedJQuery, attrs: INgEnterDirectiveAttribute) => {
-			element.bind("keydown keypress", function(event) {
+		public link: ng.IDirectiveLinkFn = (scope: INgEnterDirectiveScope, element: ng.IAugmentedJQuery, attrs: INgEnterDirectiveAttribute) => {
+			element.bind('keydown keypress', function(event: JQueryEventObject): void {
 				if (event.which === 13) {
-					scope.$apply(function() {
+					scope.$apply(function(): void {
 						scope.$eval(attrs.ngEnter);
 					});
 
 					event.preventDefault();
 				}
 			});
-		}
+		};
 
+		/* tslint:disable:typedef */
 		public static Factory() {
 			var directive = () => {
 				return new NgEnter();
-			}
+			};
 			return directive;
-		}
+		};
+		/* tslint:enable:typedef */
 	}
 
-	angular.module('starterKit').directive("ngEnter", [NgEnter.Factory()]);
+	angular.module('starterKit').directive('ngEnter', [NgEnter.Factory()]);
 }

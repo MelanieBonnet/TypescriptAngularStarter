@@ -1,4 +1,4 @@
-/// <reference path="../../../reference.ts"/>
+/// <reference path='../../../reference.ts'/>
 
 namespace engine.common.data {
 	'use strict';

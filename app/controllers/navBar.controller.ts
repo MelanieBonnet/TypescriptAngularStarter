@@ -1,4 +1,4 @@
-/// <reference path="../../reference.ts"/>
+/// <reference path='../../reference.ts'/>
 
 namespace app {
 	'use strict';
@@ -9,12 +9,15 @@ namespace app {
 	}
 
 	class NavBarController {
+		private $scope: INavBarControllerScope;
 
-		constructor(private $scope: INavBarControllerScope) {
+		constructor($scope: INavBarControllerScope) {
+			this.$scope = $scope;
+
 			this.$scope.isCollapsed = true;
-			this.$scope.pseudo = "BeHappy";
+			this.$scope.pseudo = 'BeHappy';
 		}
 	}
 
-	angular.module('starterKit').controller("NavBarController", ["$scope", NavBarController]);
+	angular.module('starterKit').controller('NavBarController', ['$scope', NavBarController]);
 }

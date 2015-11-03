@@ -3,20 +3,42 @@
  */
 
 module.exports = function (grunt) {
-
+  // load all grunt tasks
   require('load-grunt-tasks')(grunt);
+  var globalConfig = {
+    tsFiles: ['**/*.ts', '!node_modules/**/*.ts', '!bower_components/**/*.ts', '!typings/**/*.ts'],
+    jsFiles: ['**/*.js', '!node_modules/**/*.js', '!bower_components/**/*.js']
+  };
+
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-
+    globalConfig: globalConfig,
     ts: {
       default: {
-        src: ["**/*.ts", "!node_modules/**/*.ts", "!bower_components/**/*.ts", "app_engine/**/*.ts"],
+        src: '<%= globalConfig.tsFiles %>',
         options: {
           target: 'es5',
           module: 'commonjs',
           noEmitOnError: true,
           fast: 'never'
         }
+      }
+    },
+    tslint: {
+      options: {
+        configuration: grunt.file.readJSON("tslint.json")
+      },
+      files: {
+        src: '<%= globalConfig.tsFiles %>'
+      }
+    },
+    concat: {
+      options: {
+        separator: ';'
+      },
+      dist: {
+        src: '<%= globalConfig.tsFiles %>',
+        dest: 'dist/<%= pkg.name %>.js'
       }
     },
     clean: { 
@@ -35,15 +57,9 @@ module.exports = function (grunt) {
       }
     }
   });
-
-  grunt.loadNpmTasks('grunt-develop')
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks("grunt-ts");
-
-  grunt.loadNpmTasks('grunt-http-server');
-
+  
   // Default task(s).
   grunt.registerTask('web', ['http-server:dev']);
-  grunt.registerTask('default', ['clean', 'ts']);
+  grunt.registerTask('default', ['clean', 'tslint', 'ts']);
 
 };
