@@ -40,4 +40,6 @@ app_engine/**/*.js
 app_engine/**/*.js.map
 models/**/*.js
 models/**/*.js.map
+test/**/*.js
+test/**/*.js.map
 
