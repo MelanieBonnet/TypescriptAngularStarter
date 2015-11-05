@@ -41,6 +41,17 @@ module.exports = function (grunt) {
         dest: 'dist/<%= pkg.name %>.js'
       }
     },
+		karma: {
+			unit: {
+				configFile: 'karma.conf.js',
+			},
+			//continuous integration mode: run tests once in PhantomJS browser.
+			continuous: {
+				configFile: 'karma.conf.js',
+				singleRun: true,
+				browsers: ['PhantomJS']
+			},
+		},
     clean: { 
       // remove old javascript files 
       public: [
@@ -57,7 +68,6 @@ module.exports = function (grunt) {
       }
     }
   });
-  
   // Default task(s).
   grunt.registerTask('web', ['http-server:dev']);
   grunt.registerTask('default', ['clean', 'tslint', 'ts']);

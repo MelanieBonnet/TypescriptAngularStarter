@@ -13,6 +13,12 @@
     },
     "jquery/jquery.d.ts": {
       "commit": "af5b8275d1f2b92738b93fddabc461fc20c553a1"
+    },
+    "jasmine/jasmine.d.ts": {
+      "commit": "0dd29bf8253536ae24e61c109524e924ea510046"
+    },
+    "angularjs/angular-mocks.d.ts": {
+      "commit": "0dd29bf8253536ae24e61c109524e924ea510046"
     }
   }
 }
