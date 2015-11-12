@@ -70,6 +70,6 @@ module.exports = function (grunt) {
   });
   // Default task(s).
   grunt.registerTask('web', ['http-server:dev']);
-  grunt.registerTask('default', ['clean', 'tslint', 'ts']);
+  grunt.registerTask('default', ['clean', 'tslint', 'ts', 'karma:continuous']);
 
 };
