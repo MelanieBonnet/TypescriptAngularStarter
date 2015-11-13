@@ -43,3 +43,4 @@ models/**/*.js.map
 test/**/*.js
 test/**/*.js.map
 
+.tmp
