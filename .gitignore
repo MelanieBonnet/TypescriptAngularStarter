@@ -41,3 +41,4 @@ app_engine/**/*.js.map
 models/**/*.js
 models/**/*.js.map
 
+.tmp
