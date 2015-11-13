@@ -1,7 +1,7 @@
 /// <reference path="../../reference.ts"/>
 /// <reference path="../../../app/controllers/navBar.controller.ts"/>
 
-describe('app_controllers home', () => {
+describe('app_controllers navBar', () => {
 
 	var $rootScope: ng.IRootScopeService;
 	var scope: app.INavBarControllerScope;
