@@ -1,6 +1,4 @@
-/// <reference path="../../../typings/jasmine/jasmine.d.ts"/>
-/// <reference path="../../../typings/angularjs/angular.d.ts"/>
-/// <reference path="../../../typings/angularjs/angular-mocks.d.ts"/>
+/// <refernece path="../../reference.ts"/>
 /// <reference path="../../../app_engine/common/data/data.user.ts"/>
 
 describe('app_engine common data user', () => {

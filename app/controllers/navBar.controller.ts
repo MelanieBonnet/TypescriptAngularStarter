@@ -3,12 +3,12 @@
 namespace app {
 	'use strict';
 
-	interface INavBarControllerScope extends ng.IScope {
+	export interface INavBarControllerScope extends ng.IScope {
 		isCollapsed: boolean;
 		pseudo: string;
 	}
 
-	class NavBarController {
+	export class NavBarController {
 		private $scope: INavBarControllerScope;
 
 		constructor($scope: INavBarControllerScope) {
