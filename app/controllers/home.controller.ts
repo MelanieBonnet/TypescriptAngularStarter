@@ -3,7 +3,7 @@
 namespace app {
 	'use strict';
 
-	interface IHomeControllerScope extends ng.IScope {
+	export interface IHomeControllerScope extends ng.IScope {
 
 		isValid: (param: string) => ng.IPromise<boolean>;
 		launchJob: () => boolean;
@@ -11,7 +11,7 @@ namespace app {
 		users: models.User[];
 	}
 
-	class HomeController {
+	export class HomeController {
 		/**
 		 *
 		 */
@@ -33,6 +33,9 @@ namespace app {
 				});
 				return true;
 			};
+
+			this.$scope.user = new models.User();
+			this.$scope.users = [];
 		}
 	}
 
