@@ -5,7 +5,7 @@ module.exports = function (grunt) {
 	var path = require('path');
 	var globalCfg = {
 		src: {
-			tsFiles: ['{app,app_engine,models}/**/*.ts'],
+			tsFiles: ['{app,app_engine,models,test}/**/*.ts'],
 			staticMiscFiles: ['index.html', 'app/**/*.{html,json}', 'app/img/**'],
 			staticFontFiles: ['bower_components/bootstrap/dist/fonts/**']
 		},
@@ -90,6 +90,15 @@ module.exports = function (grunt) {
 				]
 			}
 		},
+		filerev: {
+			options: {
+				algorithm: 'md5',
+				length: 8
+			},
+			images: { src: '<%= globalCfg.distDir %>/app/img/**/*' },
+			js: { src: '<%= globalCfg.distDir %>/app/js/**/*' },
+			css: { src: '<%= globalCfg.distDir %>/app/css/**/*' }
+		},
 		usemin: {
 			//html file within which usemin is going to replace the resource references  
 			html: ['<%= globalCfg.distDir %>/app/**/*.html'],
@@ -102,14 +111,16 @@ module.exports = function (grunt) {
 				}
 			}
 		},
-		filerev: {
-			options: {
-				algorithm: 'md5',
-				length: 8
+		karma: {
+			unit: {
+				configFile: 'karma.conf.js',
 			},
-			images: { src: '<%= globalCfg.distDir %>/app/img/**/*' },
-			js: { src: '<%= globalCfg.distDir %>/app/js/**/*' },
-			css: { src: '<%= globalCfg.distDir %>/app/css/**/*' }
+			//continuous integration mode: run tests once in PhantomJS browser.
+			continuous: {
+				configFile: 'karma.conf.js',
+				singleRun: true,
+				browsers: ['PhantomJS']
+			},
 		},
 		clean: {
 			public: [
@@ -127,11 +138,15 @@ module.exports = function (grunt) {
 		}
 	});
 
-	grunt.registerTask('processTypescript', ['tslint', 'ts']);
-	grunt.registerTask('build', [
+	grunt.registerTask('testing', [
 		'clean',
+		'tslint',
+		'ts',
+		'karma:continuous',
+	]);
+	grunt.registerTask('build', [
+		'testing',
 		'copy',
-		'processTypescript',
 		'useminPrepare',
 		'less:generated',
 		'cssmin:generated',
