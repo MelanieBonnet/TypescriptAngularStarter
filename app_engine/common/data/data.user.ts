@@ -17,7 +17,7 @@ namespace engine.common.data {
 
 		/* tslint:disable:typedef */
 		public static Factory() {
-			var instance = ($http: ng.IHttpService, $q: ng.IQService) => {
+			const instance = ($http: ng.IHttpService, $q: ng.IQService) => {
 				return new User($http, $q);
 			};
 			return instance;
@@ -25,7 +25,7 @@ namespace engine.common.data {
 		/* tslint:enable:typedef */
 
 		public isValid(param: string): ng.IPromise<boolean> {
-			var deferred: ng.IDeferred<{}> = this.$q.defer();
+			const deferred: ng.IDeferred<{}> = this.$q.defer();
 
 			if (param.length > 3) {
 				deferred.resolve(true);
@@ -37,7 +37,7 @@ namespace engine.common.data {
 		}
 
 		public getUsers(): ng.IPromise<app.models.User[]> {
-			var deferred: ng.IDeferred<{}> = this.$q.defer();
+			const deferred: ng.IDeferred<{}> = this.$q.defer();
 
 			this.$http({
 				url: './users.json',

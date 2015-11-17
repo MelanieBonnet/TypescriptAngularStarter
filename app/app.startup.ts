@@ -12,8 +12,15 @@ namespace app {
 	configureStates.$inject = ['$stateProvider', '$urlRouterProvider'];
 
 	function configureStates($stateProvider: ng.ui.IStateProvider, $urlRouterProvider: ng.ui.IUrlRouterProvider): void {
-		var otherwise: string = '/';
-		var states: ng.ui.IState[] = getStates();
+		const otherwise: string = '/';
+		const toto: ng.ui.IState = {
+			name: 'home',
+			url: '/',
+			templateUrl: 'views/home.html',
+			controller: 'HomeController'
+		};
+		toto.name = 'sdf';
+		const states: ng.ui.IState[] = getStates();
 		states.forEach(function(state: ng.ui.IState): void {
 			$stateProvider.state(state);
 		});

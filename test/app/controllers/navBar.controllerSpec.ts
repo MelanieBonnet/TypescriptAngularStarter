@@ -3,8 +3,8 @@
 
 describe('app_controllers navBar', () => {
 
-	var $rootScope: ng.IRootScopeService;
-	var scope: app.INavBarControllerScope;
+	let $rootScope: ng.IRootScopeService;
+	let scope: app.INavBarControllerScope;
 
 	beforeEach(angular.mock.module('starterKit'));
 

@@ -3,9 +3,9 @@
 
 describe('app_engine common data user', () => {
 
-	var dataUser: engine.common.data.User;
-	var $httpBackend: ng.IHttpBackendService;
-	var $timeout: ng.ITimeoutService;
+	let dataUser: engine.common.data.User;
+	let $httpBackend: ng.IHttpBackendService;
+	let $timeout: ng.ITimeoutService;
 
 	beforeEach(angular.mock.module('common.data'));
 
@@ -19,7 +19,7 @@ describe('app_engine common data user', () => {
 	}));
 
 	it('should be valid param', (done: () => void): void => {
-		var res: ng.IPromise<boolean> = dataUser.isValid('ma chaine');
+		const res: ng.IPromise<boolean> = dataUser.isValid('ma chaine');
 
 		res.then((value: boolean) => {
 			expect(value).toEqual(true, 'should be equal true');
@@ -32,7 +32,7 @@ describe('app_engine common data user', () => {
 	});
 
 	it('should be download file', (done: () => void): void => {
-		var res: ng.IPromise<app.models.User[]> = dataUser.getUsers();
+		const res: ng.IPromise<app.models.User[]> = dataUser.getUsers();
 
 		res.then((value: app.models.User[]) => {
 			expect(value[0].firstname).toBe('Patric');

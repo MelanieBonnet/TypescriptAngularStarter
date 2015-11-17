@@ -29,7 +29,7 @@ namespace app.directive {
 
 		/* tslint:disable:typedef */
 		public static Factory() {
-			var directive = () => {
+			const directive = () => {
 				return new NgEnter();
 			};
 			return directive;

@@ -2,10 +2,10 @@
 /// <reference path="../../../app/controllers/home.controller.ts"/>
 
 describe('app_controllers home', () => {
-	var $rootScope: ng.IRootScopeService;
-	var scope: app.IHomeControllerScope;
-	var $httpBackend: ng.IHttpBackendService;
-	var $timeout: ng.ITimeoutService;
+	let $rootScope: ng.IRootScopeService;
+	let scope: app.IHomeControllerScope;
+	let $httpBackend: ng.IHttpBackendService;
+	let $timeout: ng.ITimeoutService;
 
 	beforeEach(angular.mock.module('starterKit'));
 
@@ -22,7 +22,7 @@ describe('app_controllers home', () => {
 	}));
 
 	it('should be true with "long term"', (done: () => void): void => {
-		var res: ng.IPromise<boolean> = scope.isValid('long term');
+		const res: ng.IPromise<boolean> = scope.isValid('long term');
 		res.then((value: boolean) => {
 			expect(value).toBe(true, 'should be true');
 
@@ -35,7 +35,7 @@ describe('app_controllers home', () => {
 
 	it('get users', (): void => {
 		scope.user.name = 'lemettre';
-		var res: boolean = scope.launchJob();
+		const res: boolean = scope.launchJob();
 		$timeout.flush();
 		$httpBackend.flush();
 		expect(res).toBe(true, 'must return true');

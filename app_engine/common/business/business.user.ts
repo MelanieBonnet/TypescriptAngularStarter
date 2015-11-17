@@ -17,7 +17,7 @@ namespace engine.common.business {
 
 		/* tslint:disable:typedef */
 		public static Factory() {
-			var instance = ($q: ng.IQService, dataUser: common.data.User) => {
+			const instance = ($q: ng.IQService, dataUser: common.data.User) => {
 				return new User($q, dataUser);
 			};
 			return instance;
