@@ -5,7 +5,8 @@ module.exports = function (grunt) {
 	var path = require('path');
 	var globalCfg = {
 		src: {
-			tsFiles: ['{app,app_engine,models,test}/**/*.ts'],
+			tsFiles: ['{app,app_engine,models,test}/**/*.ts','reference.ts'],
+			generatedJSFiles: ['{app,app_engine,models,test}/**/*.{js,js.map}', 'reference.{js,js.map}'],
 			staticMiscFiles: ['index.html', 'app/**/*.{html,json}', 'app/img/**'],
 			staticFontFiles: ['bower_components/bootstrap/dist/fonts/**']
 		},
@@ -121,9 +122,8 @@ module.exports = function (grunt) {
 		},
 		clean: {
 			public: [
-				'{app,app_engine,models}/**/*.{js,js.map}',
-				'<%= globalCfg.distDir %>/**',
-				'reference.{js,js.map}'
+				'<%= globalCfg.src.generatedJSFiles %>',
+				'<%= globalCfg.distDir %>/**'
 			]
 		},
 		'http-server': {
