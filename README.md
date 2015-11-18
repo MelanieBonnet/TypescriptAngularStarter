@@ -1,4 +1,4 @@
-# Typescript Angular Starter v0.1
+# Typescript Angular Starter v0.2.1
 
 ## Installation
 ### Prerequisites :
@@ -30,7 +30,7 @@ bower install <package-name> --save
 Build the website :
 
 ```sh
-grunt 
+grunt build
 ```
 
 Launch the website :
@@ -39,10 +39,10 @@ Launch the website :
 grunt web
 ```
 
-Test the website :
+Test the website (tslint+karma) :
 
 ```sh
-grunt karma
+grunt testing
 ```
 
 # Useful links #
