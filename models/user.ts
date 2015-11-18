@@ -4,7 +4,7 @@ namespace app.models {
 	'use strict';
 
 	export class User {
-		name: string;
-		firstname: string;
+		public name: string;
+		public firstname: string;
 	}
 }

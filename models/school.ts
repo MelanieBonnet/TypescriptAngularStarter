@@ -4,7 +4,8 @@ namespace app.models {
 	'use strict';
 
 	export class School {
-		name: string;
+		public name: string;
+
 		constructor(name: string) {
 			this.name = name;
 		}

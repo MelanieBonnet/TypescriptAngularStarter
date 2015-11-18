@@ -5,5 +5,5 @@ namespace engine.common {
 
 	angular.module('app_engine', [
 		'common.business'
-	])
+	]);
 }

@@ -39,6 +39,12 @@ Launch the website :
 grunt web
 ```
 
+Test the website :
+
+```sh
+grunt karma
+```
+
 # Useful links #
 Access the website localy :
 
