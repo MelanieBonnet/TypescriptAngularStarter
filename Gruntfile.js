@@ -5,7 +5,7 @@ module.exports = function (grunt) {
 	var path = require('path');
 	var globalCfg = {
 		src: {
-			tsFiles: ['{app,app_engine,models,test}/**/*.ts','reference.ts'],
+			tsFiles: ['{app,app_engine,models,test}/**/*.ts', 'reference.ts'],
 			generatedJSFiles: ['{app,app_engine,models,test}/**/*.{js,js.map}', 'reference.{js,js.map}'],
 			staticMiscFiles: ['index.html', 'app/**/*.{html,json}', 'app/img/**'],
 			staticFontFiles: ['bower_components/bootstrap/dist/fonts/**']
@@ -16,12 +16,13 @@ module.exports = function (grunt) {
 	//less config function for usemin
 	var lessCreateConfig = function (context, block) {
 		var cfg = { files: [] },
+			//the destination file is the one referenced in the html and it's to be placed in the context.outDir folder 
 			outfile = path.join(context.outDir, block.dest),
 			filesDef = {};
 
 		filesDef.dest = outfile;
 		filesDef.src = [];
-
+		//we have to process each 'less' file referenced in the html, and they are in the 'inDir' folder 
 		context.inFiles.forEach(function (inFile) {
 			filesDef.src.push(path.join(context.inDir, inFile));
 		});
