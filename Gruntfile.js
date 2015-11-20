@@ -147,8 +147,8 @@ module.exports = function (grunt) {
 		'copy',
 		'useminPrepare',
 		'less:generated',
-		'cssmin:generated',
 		'concat:generated',
+		'cssmin:generated',		
 		'uglify:generated',
 		'filerev',
 		'usemin'
