@@ -1,4 +1,4 @@
-# Typescript Angular Starter v0.2.1
+# Typescript Angular Starter v0.2.3
 
 ## Installation
 ### Prerequisites :
@@ -46,7 +46,7 @@ grunt testing
 ```
 
 # Useful links #
-Access the website localy :
+Access the website locally :
 
 ```html
 
