@@ -26,7 +26,7 @@
 		"label-undefined": true,
 		"max-line-length": [
 			true,
-			300
+			220
 		],
 		"member-access": true,
 		"member-ordering": [
@@ -39,6 +39,7 @@
 		"no-arg": true,
 		"no-bitwise": true,
 		"no-conditional-assignment": true,
+		"no-consecutive-blank-lines": false,
 		"no-console": [
 			true,
 			"debug",
@@ -67,7 +68,7 @@
 		"no-use-before-declare": true,
 		"no-var-keyword": true,
 		"no-var-requires": true,
-		"object-literal-sort-keys": true,
+		"object-literal-sort-keys": false,
 		"one-line": [
 			true,
 			"check-open-brace",
@@ -86,7 +87,7 @@
 		"trailing-comma": [
 			true,
 			{
-				"multiline": "always",
+				"multiline": "never",
 				"singleline": "never"
 			}
 		],

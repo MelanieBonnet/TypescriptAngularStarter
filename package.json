@@ -21,7 +21,7 @@
 	"devDependencies": {
 		"bower": "^1.6.5",
 		"grunt": "^0.4.5",
-		"tslint": "^2.5.1",
+		"tslint": "^3.0.0",
 		"less-plugin-clean-css": "^1.5.1",
 		"less-plugin-autoprefix": "^1.5.1",
 		"grunt-usemin": "^3.1.1",
