@@ -104,8 +104,14 @@ module.exports = function (grunt) {
 		usemin: {
 			//html file within which usemin is going to replace the resource references  
 			html: ['<%= globalCfg.distDir %>/app/**/*.html'],
+			css: ['<%= globalCfg.distDir %>/app/css/*.css'],
+			js: ['<%= globalCfg.distDir %>/app/js/*.js'],
 			options: {
-				assetsDirs: '<%= globalCfg.distDir %>/app',
+				//we add the css folder as an "assetDir" so that the ressources referenced in it can be resolved
+				assetsDirs: [
+					'<%= globalCfg.distDir %>/app',
+					'<%= globalCfg.distDir %>/app/css'
+				],
 				blockReplacements: {
 					less: function (block) {
 						return '<link rel="stylesheet" href="' + block.dest + '">';
@@ -148,7 +154,7 @@ module.exports = function (grunt) {
 		'useminPrepare',
 		'less:generated',
 		'concat:generated',
-		'cssmin:generated',		
+		'cssmin:generated',
 		'uglify:generated',
 		'filerev',
 		'usemin'
