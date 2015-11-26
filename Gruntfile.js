@@ -142,14 +142,14 @@ module.exports = function (grunt) {
 		}
 	});
 
-	grunt.registerTask('testing', [
+	grunt.registerTask('test', [
 		'clean',
 		'tslint',
 		'ts',
 		'karma:continuous',
 	]);
 	grunt.registerTask('build', [
-		'testing',
+		'test',
 		'copy',
 		'useminPrepare',
 		'less:generated',
