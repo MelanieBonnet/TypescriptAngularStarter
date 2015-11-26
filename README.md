@@ -1,4 +1,4 @@
-# Typescript Angular Starter v0.2.3
+# Typescript Angular Starter v0.2.3 [![Build Status](https://travis-ci.org/3IE/TypescriptAngularStarter.svg?branch=develop)](https://travis-ci.org/3IE/TypescriptAngularStarter)
 
 ## Installation
 ### Prerequisites :
