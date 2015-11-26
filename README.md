@@ -1,4 +1,5 @@
-# Typescript Angular Starter v0.2.3 [![Build Status](https://travis-ci.org/3IE/TypescriptAngularStarter.svg?branch=develop)](https://travis-ci.org/3IE/TypescriptAngularStarter)
+# Typescript Angular Starter v0.2.3 [![Build Status](https://travis-ci.org/3IE/TypescriptAngularStarter.svg?branch=develop)](https://travis-ci.org/3IE/TypescriptAngularStarter) [![Build status](https://ci.appveyor.com/api/projects/status/s83wtp6sal3uo70u?svg=true)](https://ci.appveyor.com/project/BenoitVerdier/typescriptangularstarter)
+
 
 ## Installation
 ### Prerequisites :
