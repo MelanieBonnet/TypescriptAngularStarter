@@ -18,6 +18,9 @@
 			"email": "benoit.verdier@gmail.com"
 		}
 	],
+	"scripts": {
+		"test": "grunt test"
+	},
 	"devDependencies": {
 		"bower": "^1.6.4",
 		"grunt": "^0.4.5",
