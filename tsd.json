@@ -6,19 +6,19 @@
   "bundle": "typings/tsd.d.ts",
   "installed": {
     "angular-ui-router/angular-ui-router.d.ts": {
-      "commit": "4f7b7e01d3a9622bfab0bef469e169529e60c66b"
+      "commit": "7a3d6944036902996b87981e6150900952b35628"
     },
     "angularjs/angular.d.ts": {
-      "commit": "4f7b7e01d3a9622bfab0bef469e169529e60c66b"
+      "commit": "7a3d6944036902996b87981e6150900952b35628"
     },
     "jquery/jquery.d.ts": {
-      "commit": "4f7b7e01d3a9622bfab0bef469e169529e60c66b"
+      "commit": "7a3d6944036902996b87981e6150900952b35628"
     },
     "jasmine/jasmine.d.ts": {
-      "commit": "4f7b7e01d3a9622bfab0bef469e169529e60c66b"
+      "commit": "7a3d6944036902996b87981e6150900952b35628"
     },
     "angularjs/angular-mocks.d.ts": {
-      "commit": "4f7b7e01d3a9622bfab0bef469e169529e60c66b"
+      "commit": "7a3d6944036902996b87981e6150900952b35628"
     }
   }
 }
