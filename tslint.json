@@ -81,7 +81,7 @@
 			"single",
 			"avoid-escape"
 		],
-		"radix": true,
+		"radix": false,
 		"semicolon": true,
 		"switch-default": true,
 		"trailing-comma": [
