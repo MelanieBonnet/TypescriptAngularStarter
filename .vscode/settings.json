@@ -1,0 +1,13 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+	"files.exclude": {
+		"app/**/*.js*": true,
+		"app_engine/**/*.js*": true,
+		"models/**/*.js*": true,
+		"test/**/*.js*": true,
+		".tmp": true,
+		"reference.js*": true,
+		"node_modules": true,
+		"dist": true
+	}
+}
