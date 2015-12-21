@@ -53,6 +53,5 @@ grunt testing
 Access the website locally :
 
 ```html
-
 http://localhost:5000/
 ```

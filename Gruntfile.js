@@ -1,6 +1,8 @@
 module.exports = function (grunt) {
 	// load all grunt tasks without explicitly referecing them
-	require('load-grunt-tasks')(grunt);
+	require('jit-grunt')(grunt, {
+		useminPrepare: 'grunt-usemin'
+	});
 
 	var path = require('path');
 	var globalCfg = {
@@ -133,23 +135,38 @@ module.exports = function (grunt) {
 				'<%= globalCfg.distDir %>/**'
 			]
 		},
-		'http-server': {
-			'dev': {
-				root: '<%= globalCfg.distDir %>',
-				port: 5000,
-				openBrowser: true
+		connect: {
+			dev: {
+				options: {
+					port: 5000,
+					base: '<%= globalCfg.distDir %>',
+					open: true,
+					debug: true,
+					keepalive: true
+				}
+			},
+			flynn: {
+				options: {
+					port: process.env.PORT || 5000,
+					base: '<%= globalCfg.distDir %>',
+					keepalive: true
+				}
 			}
 		}
 	});
 
-	grunt.registerTask('test', [
+	grunt.registerTask('compile', [
 		'clean',
 		'tslint',
 		'ts',
+	]);
+
+	grunt.registerTask('test', [
+		'compile',
 		'karma:continuous',
 	]);
 	grunt.registerTask('build', [
-		'test',
+		'compile',
 		'copy',
 		'useminPrepare',
 		'less:generated',
@@ -159,5 +176,5 @@ module.exports = function (grunt) {
 		'filerev',
 		'usemin'
 	]);
-	grunt.registerTask('web', ['http-server:dev']);
+	grunt.registerTask('web', ['connect:dev']);
 };
