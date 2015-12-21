@@ -7,3 +7,8 @@ notifications:
   email:
     on_success: change
     on_failure: always
+deploy:
+  api_key:
+    secure: nv0n05gjLZike86qWGTfL0iOIpms7BedC9ADHjBXG5slgoDkF+YF1ODl3AJWEJtUC0Bbxg5yduPtdlAKXFemUa2D5TaDZ/w3xbR3CDrJ8xHYFh8x+MlWCfJy69ghNNl9RjupTi1HpjRR1rf8xQ9iTWElreO1j4bLRAx4I3bsAUiwRl4LZ56Eg5BicePG8gFrPCQ+SOCypg/U/BET/A7HheB1qO/s39+rK19RjmrlSqXaBErwloOK4ABTFiQfixe56eDjWxCatiaKsgZ1k9jfz+v62DvAdRagZyVPT2BLIFXe7oW7Set3metASTV27zgzCBn5m5rzvaHLG3n1n5engSKL7s4cAJSMS2rc7lrPODlZwbLB3eA6SW2ZsjUheFfgHKztZWgyC3ViJThlI1bvF7O/OPtnH+Pz0dt4kkzIyHDy//mFRciwD1H6MSjM0mf0bIxM7lbR7eeL8QFqH9ZOlUjkm6lZ6701xVWV2JX760R0SXk0+3P864oWnEYa6tHfvL14Z5cvSHxRycGFkROoZrNyor0CNn64pwrtlHmZcjm8JHzxyr71fMbtXc3hnB8VsYXetHFczc5m4ujupL/Rlq9FS3CrP6glKhShKuZkiczIAU2WpRl8tYmJ3iZhoAKxR9E/Txy7dgR/n/AxggB3IBXknW/e4GI2Jbrx18CUeoM=
+  app:
+    feature/heroku-deploy: angulartypescriptdev
