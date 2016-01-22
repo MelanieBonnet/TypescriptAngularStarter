@@ -161,12 +161,20 @@ module.exports = function (grunt) {
 		'ts',
 	]);
 
+	grunt.registerTask('buildinfo', 'generate buildinfo file', function () {
+		var pkg = grunt.file.readJSON('package.json');
+		var filePath = globalCfg.distDir + '/buildinfo.json';
+		var info = { 'name': pkg.name, 'version': pkg.version, 'build_date': grunt.template.today('yyyy-mm-dd') };
+		grunt.file.write(filePath, JSON.stringify(info));
+		grunt.log.ok(filePath + ' generated');
+	});
 	grunt.registerTask('test', [
 		'compile',
 		'karma:continuous',
 	]);
 	grunt.registerTask('build', [
 		'compile',
+		'buildinfo',
 		'copy',
 		'useminPrepare',
 		'less:generated',
