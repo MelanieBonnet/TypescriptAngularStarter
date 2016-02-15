@@ -53,6 +53,6 @@
 	"scripts": {
 		"postinstall": "bower install && typings install && grunt build",
 		"test": "grunt test",
-		"start": "grunt connect:flynn"
+		"start": "grunt connect:cloudfoundry"
 	}
 }
