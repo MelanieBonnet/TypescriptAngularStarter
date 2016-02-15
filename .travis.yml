@@ -7,3 +7,14 @@ notifications:
   email:
     on_success: change
     on_failure: always
+deploy:
+  provider: cloudfoundry
+  api: https://api.run.pivotal.io
+  username: benoit.verdier@3ie.fr
+  password:
+    secure: $PIVOTAL_PASSWORD
+  organization: 3ie
+  space: development
+  on:
+    repo: 3IE/TypescriptAngularStarter
+    branch: feature/cloudfoundry-deploy

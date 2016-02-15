@@ -145,7 +145,7 @@ module.exports = function (grunt) {
 					keepalive: true
 				}
 			},
-			flynn: {
+			cloudfoundry: {
 				options: {
 					port: process.env.PORT || 5000,
 					base: '<%= globalCfg.distDir %>',
