@@ -1,6 +1,8 @@
 module.exports = function (grunt) {
 	// load all grunt tasks without explicitly referecing them
-	require('load-grunt-tasks')(grunt);
+	require('jit-grunt')(grunt, {
+		useminPrepare: 'grunt-usemin'
+	});
 
 	var path = require('path');
 	var globalCfg = {
@@ -104,8 +106,14 @@ module.exports = function (grunt) {
 		usemin: {
 			//html file within which usemin is going to replace the resource references  
 			html: ['<%= globalCfg.distDir %>/app/**/*.html'],
+			css: ['<%= globalCfg.distDir %>/app/css/*.css'],
+			js: ['<%= globalCfg.distDir %>/app/js/*.js'],
 			options: {
-				assetsDirs: '<%= globalCfg.distDir %>/app',
+				//we add the css folder as an "assetDir" so that the ressources referenced in it can be resolved
+				assetsDirs: [
+					'<%= globalCfg.distDir %>/app',
+					'<%= globalCfg.distDir %>/app/css'
+				],
 				blockReplacements: {
 					less: function (block) {
 						return '<link rel="stylesheet" href="' + block.dest + '">';
@@ -127,31 +135,54 @@ module.exports = function (grunt) {
 				'<%= globalCfg.distDir %>/**'
 			]
 		},
-		'http-server': {
-			'dev': {
-				root: '<%= globalCfg.distDir %>',
-				port: 5000,
-				openBrowser: true
+		connect: {
+			dev: {
+				options: {
+					port: 5000,
+					base: '<%= globalCfg.distDir %>',
+					open: true,
+					debug: true,
+					keepalive: true
+				}
+			},
+			cloudfoundry: {
+				options: {
+					port: process.env.PORT || 5000,
+					base: '<%= globalCfg.distDir %>',
+					keepalive: true
+				}
 			}
 		}
 	});
 
-	grunt.registerTask('testing', [
+	grunt.registerTask('compile', [
 		'clean',
 		'tslint',
 		'ts',
+	]);
+
+	grunt.registerTask('buildinfo', 'generate buildinfo file', function () {
+		var pkg = grunt.file.readJSON('package.json');
+		var filePath = globalCfg.distDir + '/buildinfo.json';
+		var info = { 'name': pkg.name, 'version': pkg.version, 'build_date': grunt.template.today('yyyy-mm-dd') };
+		grunt.file.write(filePath, JSON.stringify(info));
+		grunt.log.ok(filePath + ' generated');
+	});
+	grunt.registerTask('test', [
+		'compile',
 		'karma:continuous',
 	]);
 	grunt.registerTask('build', [
-		'testing',
+		'compile',
+		'buildinfo',
 		'copy',
 		'useminPrepare',
 		'less:generated',
 		'concat:generated',
-		'cssmin:generated',		
+		'cssmin:generated',
 		'uglify:generated',
 		'filerev',
 		'usemin'
 	]);
-	grunt.registerTask('web', ['http-server:dev']);
+	grunt.registerTask('web', ['connect:dev']);
 };

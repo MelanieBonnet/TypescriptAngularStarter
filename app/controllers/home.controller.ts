@@ -4,7 +4,6 @@ namespace app {
 	'use strict';
 
 	export interface IHomeControllerScope extends ng.IScope {
-
 		isValid: (param: string) => ng.IPromise<boolean>;
 		launchJob: () => boolean;
 		user: models.User;
