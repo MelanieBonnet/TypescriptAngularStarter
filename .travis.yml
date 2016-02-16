@@ -31,4 +31,5 @@ deploy:
     manifest: manifest-preprod.yml
     on:
       repo: 3IE/TypescriptAngularStarter
-      branch: feature
+      all_branches: true
+      condition: ${TRAVIS_BRANCH%%/*} == release #we check if the start of the branch name contains 'release'
