@@ -1,12 +1,12 @@
 # Typescript Angular Starter v0.3.0 
 
 Build : 
-[![Build Status](https://travis-ci.org/3IE/TypescriptAngularStarter.svg?branch=master)](https://travis-ci.org/3IE/TypescriptAngularStarter) 
-[![Build status](https://ci.appveyor.com/api/projects/status/s83wtp6sal3uo70u/branch/master?svg=true)](https://ci.appveyor.com/project/BenoitVerdier/typescriptangularstarter/branch/master)
+[![Build Status](https://travis-ci.org/3IE/TypescriptAngularStarter.svg?branch=develop)](https://travis-ci.org/3IE/TypescriptAngularStarter) 
+[![Build status](https://ci.appveyor.com/api/projects/status/s83wtp6sal3uo70u/branch/develop?svg=true)](https://ci.appveyor.com/project/BenoitVerdier/typescriptangularstarter/branch/develop)
 
 Dependecies : 
-[![DevDependencies Status](https://david-dm.org/3IE/TypescriptAngularStarter/master/dev-status.svg)](https://david-dm.org/3IE/TypescriptAngularStarter/master#info=devDependencies)  
-[![Dependencies Status](https://david-dm.org/3IE/TypescriptAngularStarter/master.svg)](https://david-dm.org/3IE/TypescriptAngularStarter/master)
+[![DevDependencies Status](https://david-dm.org/3IE/TypescriptAngularStarter/develop/dev-status.svg)](https://david-dm.org/3IE/TypescriptAngularStarter/develop#info=devDependencies)  
+[![Dependencies Status](https://david-dm.org/3IE/TypescriptAngularStarter/develop.svg)](https://david-dm.org/3IE/TypescriptAngularStarter/develop)
 
 ## Installation
 ### Prerequisites :
