@@ -94,6 +94,11 @@ module.exports = function (grunt) {
 				]
 			}
 		},
+		uglify: {
+			options: {
+				screwIE8: true
+			}
+		},
 		filerev: {
 			options: {
 				algorithm: 'md5',
