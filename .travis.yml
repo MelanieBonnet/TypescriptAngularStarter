@@ -11,6 +11,7 @@ notifications:
 deploy:
   - provider: cloudfoundry
     edge: true
+    skip_cleanup: true
     api: https://api.run.pivotal.io
     username: benoit.verdier@3ie.fr
     password:
@@ -24,6 +25,7 @@ deploy:
 
   - provider: cloudfoundry
     edge: true
+    skip_cleanup: true
     api: https://api.run.pivotal.io
     username: benoit.verdier@3ie.fr
     password:
