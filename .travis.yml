@@ -10,6 +10,7 @@ notifications:
 
 deploy:
   - provider: cloudfoundry
+    edge: true
     api: https://api.run.pivotal.io
     username: benoit.verdier@3ie.fr
     password:
@@ -22,6 +23,7 @@ deploy:
       branch: develop
 
   - provider: cloudfoundry
+    edge: true
     api: https://api.run.pivotal.io
     username: benoit.verdier@3ie.fr
     password:

@@ -1,3 +1,7 @@
+app
+app_engine
 bower_components
+models
 node_modules
-dist
+test
+typings

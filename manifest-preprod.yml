@@ -1,3 +1,5 @@
 applications:
 - name: preprod-angulartypescriptstarter
-  memory: 128M
+  buildpack: staticfile_buildpack
+  memory: 64M
+  path: dist

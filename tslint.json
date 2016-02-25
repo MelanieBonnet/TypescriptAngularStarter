@@ -84,7 +84,10 @@
 			"avoid-escape"
 		],
 		"radix": false,
-		"semicolon": true,
+		"semicolon": [
+			true,
+			"always"
+		],
 		"switch-default": true,
 		"trailing-comma": [
 			true,
@@ -101,6 +104,7 @@
 			true,
 			"call-signature",
 			"parameter",
+			"arrow-parameter",
 			"property-declaration",
 			"variable-declaration",
 			"member-variable-declaration"

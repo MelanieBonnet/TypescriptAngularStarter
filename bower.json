@@ -6,12 +6,12 @@
 	"license": "",
 	"private": true,
 	"dependencies": {
-		"angular": "~1.4.4",
-		"angular-bootstrap": "~0.13.3",
-		"angular-mocks": "~1.4.7",
-		"angular-ui-router": "~0.2.15",
-		"angular-ui-validate": "~1.2.1",
+		"angular": "~1.5.0",
+		"angular-bootstrap": "~1.1.0",
+		"angular-mocks": "~1.5.0",
+		"angular-ui-router": "~0.2.18",
+		"angular-ui-validate": "~1.2.2",
 		"bootstrap": "~3.3.5",
-		"less": "~2.5.1"
+		"less": "~2.6.0"
 	}
 }

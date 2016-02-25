@@ -15,6 +15,15 @@ namespace app.directive {
 			//
 		}
 
+		/* tslint:disable:typedef */
+		public static Factory() {
+			const directive = () => {
+				return new NgEnter();
+			};
+			return directive;
+		};
+		/* tslint:enable:typedef */
+
 		public link: ng.IDirectiveLinkFn = (scope: INgEnterDirectiveScope, element: ng.IAugmentedJQuery, attrs: INgEnterDirectiveAttribute) => {
 			element.bind('keydown keypress', function(event: JQueryEventObject): void {
 				if (event.which === 13) {
@@ -26,15 +35,6 @@ namespace app.directive {
 				}
 			});
 		};
-
-		/* tslint:disable:typedef */
-		public static Factory() {
-			const directive = () => {
-				return new NgEnter();
-			};
-			return directive;
-		};
-		/* tslint:enable:typedef */
 	}
 
 	angular.module('starterKit').directive('ngEnter', [NgEnter.Factory()]);
