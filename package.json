@@ -51,6 +51,6 @@
 	},
 	"scripts": {
 		"postinstall": "bower install && typings install",
-		"test": "grunt test"
+		"test": "grunt test && grunt build"
 	}
 }
