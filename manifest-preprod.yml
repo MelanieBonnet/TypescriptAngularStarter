@@ -1,5 +1,5 @@
 applications:
 - name: preprod-angulartypescriptstarter
-  buildpack: staticfile_buildpack
+  buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git
   memory: 64M
   path: dist
