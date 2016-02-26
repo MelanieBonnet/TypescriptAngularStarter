@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function (grunt) {
 	// load all grunt tasks without explicitly referecing them
 	require('jit-grunt')(grunt, {
@@ -94,6 +96,11 @@ module.exports = function (grunt) {
 				]
 			}
 		},
+		uglify: {
+			options: {
+				screwIE8: true
+			}
+		},
 		filerev: {
 			options: {
 				algorithm: 'md5',
@@ -142,13 +149,6 @@ module.exports = function (grunt) {
 					base: '<%= globalCfg.distDir %>',
 					open: true,
 					debug: true,
-					keepalive: true
-				}
-			},
-			cloudfoundry: {
-				options: {
-					port: process.env.PORT || 5000,
-					base: '<%= globalCfg.distDir %>',
 					keepalive: true
 				}
 			}

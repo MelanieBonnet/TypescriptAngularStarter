@@ -10,11 +10,12 @@ notifications:
 
 deploy:
   - provider: cloudfoundry
+    skip_cleanup: true
     api: https://api.run.pivotal.io
     username: benoit.verdier@3ie.fr
     password:
       secure: P0e70sm+D2FTdpF1RGLGwFZh5NN9h4IcqhAizaUze/ykViuoDds1P2zjdObvhAWbeuJ42SAo0qmluTuNdA+0zJcD7MVUkW+cpuHRjrn+sLrov4ORRn87yfH9p7RxhngJQad7G15HCsdxEE3xjqboJSnEc8FIqGWpTNV3d7/JKsvlmiRet9YlJd9wPpnsgh/d144572vCftiV+ICiv2VjgAN539/+7ndj9tUlhqrKf+gJCrOdtGItBXkoii23qks2fvKblBVABpapt8oj4Vd3hNMHkchw260AzeSvrGXKZTyxC3884ZJUh8tjk/ctyY1KAysLD4JsPsFHvGVmscp0EQ9EPAbLBc73LLJZ3e0UDHK1xU2ni8blUs0QhQP7+OQDReOmanaQMbhzb/o6c3+R4KScTTmghyuZnNLAQA8fO1YVaZmNVHTXVA/ZxocPegjxtOiw39ENx1i6UHCXxJ1SgTKeCe+HHE+ML8FGoY36h0Aabpfx5iRS+WFFHMI4bx8BXQtFYOR+4msqnXkE6Q2qdEPkXmTQljXt2FxCZV6L6uJ9/CVA9+T6e37hs5zR6rA0FC3VfiZBlCSfMZQZmgem2wgXdsTLtyym36Su8eAauE81+hIWmdcNlNbXnygrGNl7OZjjmuiZdTrVBE08AMpW5S7bQWxy4T+fFNtvcUzyTAI=
-    organization: 3ie
+    organization: 3ie-epita
     space: development
     manifest: manifest.yml
     on:
@@ -22,11 +23,12 @@ deploy:
       branch: develop
 
   - provider: cloudfoundry
+    skip_cleanup: true
     api: https://api.run.pivotal.io
     username: benoit.verdier@3ie.fr
     password:
       secure: P0e70sm+D2FTdpF1RGLGwFZh5NN9h4IcqhAizaUze/ykViuoDds1P2zjdObvhAWbeuJ42SAo0qmluTuNdA+0zJcD7MVUkW+cpuHRjrn+sLrov4ORRn87yfH9p7RxhngJQad7G15HCsdxEE3xjqboJSnEc8FIqGWpTNV3d7/JKsvlmiRet9YlJd9wPpnsgh/d144572vCftiV+ICiv2VjgAN539/+7ndj9tUlhqrKf+gJCrOdtGItBXkoii23qks2fvKblBVABpapt8oj4Vd3hNMHkchw260AzeSvrGXKZTyxC3884ZJUh8tjk/ctyY1KAysLD4JsPsFHvGVmscp0EQ9EPAbLBc73LLJZ3e0UDHK1xU2ni8blUs0QhQP7+OQDReOmanaQMbhzb/o6c3+R4KScTTmghyuZnNLAQA8fO1YVaZmNVHTXVA/ZxocPegjxtOiw39ENx1i6UHCXxJ1SgTKeCe+HHE+ML8FGoY36h0Aabpfx5iRS+WFFHMI4bx8BXQtFYOR+4msqnXkE6Q2qdEPkXmTQljXt2FxCZV6L6uJ9/CVA9+T6e37hs5zR6rA0FC3VfiZBlCSfMZQZmgem2wgXdsTLtyym36Su8eAauE81+hIWmdcNlNbXnygrGNl7OZjjmuiZdTrVBE08AMpW5S7bQWxy4T+fFNtvcUzyTAI=
-    organization: 3ie
+    organization: 3ie-epita
     space: pre-production
     manifest: manifest-preprod.yml
     on:
