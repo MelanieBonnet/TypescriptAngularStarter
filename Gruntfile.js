@@ -164,7 +164,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('buildinfo', 'generate buildinfo file', function () {
 		var pkg = grunt.file.readJSON('package.json');
 		var filePath = globalCfg.distDir + '/buildinfo.json';
-		var info = { 'name': pkg.name, 'version': pkg.version, 'build_date': grunt.template.today('yyyy-mm-dd') };
+		var info = { 'name': pkg.name, 'version': pkg.version, 'build_date': grunt.template.today('yyyy-mm-dd HH:MM:ss') };
 		grunt.file.write(filePath, JSON.stringify(info));
 		grunt.log.ok(filePath + ' generated');
 	});
