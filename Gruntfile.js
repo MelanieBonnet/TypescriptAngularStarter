@@ -35,6 +35,20 @@ module.exports = function (grunt) {
 		context.outFiles = [block.dest];
 		return cfg;
 	};
+	
+	var sassCreateConfig = function (context, block) {
+		var cfg = { files: [] }, 
+			outfile = path.join(context.outDir, block.dest),
+			filesDef = {};
+		filesDef.dest = outfile;
+		filesDef.src = []; 
+		context.inFiles.forEach(function (inFile) {
+			filesDef.src.push(path.join(context.inDir, inFile));
+		});
+		cfg.files.push(filesDef);
+		context.outFiles = [block.dest];
+		return cfg;
+	};
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
@@ -76,10 +90,14 @@ module.exports = function (grunt) {
 				flow: {
 					steps: {
 						'js': ['concat', 'uglify'],
-						'css': ['concat', 'cssmin'],
+						'css': ['concat'],
 						'less': [{
 							name: 'less',
 							createConfig: lessCreateConfig
+						}],
+						'sass': [{
+							name: 'sass',
+							createConfig: sassCreateConfig
 						}]
 					},
 					post: {}
@@ -87,15 +105,24 @@ module.exports = function (grunt) {
 			}
 		},
 		less: {
+			options: { }
+		},
+		sass: {
 			options: {
-				plugins: [
-					//plugin that automatically prefixes the css rules with vendor prefixes when needed 
-					new (require('less-plugin-autoprefix'))({ browsers: ["last 2 versions"] }),
-					//plugin that minifies the css
-					new (require('less-plugin-clean-css'))()
-				]
+				outputStyle: 'compressed'
 			}
 		},
+		postcss: {
+			options: {
+				processors: [
+        			require('autoprefixer')({browsers: 'last 2 versions'}), // add vendor prefixes
+        			require('cssnano')() // minify the result
+					]
+				},
+				dist: {
+      				src: '<%= globalCfg.distDir %>/app/css/*.css'
+    			}
+  		},
 		uglify: {
 			options: {
 				screwIE8: true
@@ -123,6 +150,9 @@ module.exports = function (grunt) {
 				],
 				blockReplacements: {
 					less: function (block) {
+						return '<link rel="stylesheet" href="' + block.dest + '">';
+					},
+					sass: function (block) {
 						return '<link rel="stylesheet" href="' + block.dest + '">';
 					}
 				}
@@ -164,7 +194,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('buildinfo', 'generate buildinfo file', function () {
 		var pkg = grunt.file.readJSON('package.json');
 		var filePath = globalCfg.distDir + '/buildinfo.json';
-		var info = { 'name': pkg.name, 'version': pkg.version, 'build_date': grunt.template.today('yyyy-mm-dd') };
+		var info = { 'name': pkg.name, 'version': pkg.version, 'build_date': grunt.template.today('yyyy-mm-dd HH:MM:ss') };
 		grunt.file.write(filePath, JSON.stringify(info));
 		grunt.log.ok(filePath + ' generated');
 	});
@@ -178,11 +208,12 @@ module.exports = function (grunt) {
 		'copy',
 		'useminPrepare',
 		'less:generated',
+		'sass:generated',
 		'concat:generated',
-		'cssmin:generated',
 		'uglify:generated',
 		'filerev',
-		'usemin'
+		'usemin',
+		'postcss'
 	]);
 	grunt.registerTask('web', ['connect:dev']);
 };

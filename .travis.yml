@@ -12,9 +12,9 @@ deploy:
   - provider: cloudfoundry
     skip_cleanup: true
     api: https://api.run.pivotal.io
-    username: benoit.verdier@3ie.fr
+    username: pivotal.deploy@3ie.fr
     password:
-      secure: P0e70sm+D2FTdpF1RGLGwFZh5NN9h4IcqhAizaUze/ykViuoDds1P2zjdObvhAWbeuJ42SAo0qmluTuNdA+0zJcD7MVUkW+cpuHRjrn+sLrov4ORRn87yfH9p7RxhngJQad7G15HCsdxEE3xjqboJSnEc8FIqGWpTNV3d7/JKsvlmiRet9YlJd9wPpnsgh/d144572vCftiV+ICiv2VjgAN539/+7ndj9tUlhqrKf+gJCrOdtGItBXkoii23qks2fvKblBVABpapt8oj4Vd3hNMHkchw260AzeSvrGXKZTyxC3884ZJUh8tjk/ctyY1KAysLD4JsPsFHvGVmscp0EQ9EPAbLBc73LLJZ3e0UDHK1xU2ni8blUs0QhQP7+OQDReOmanaQMbhzb/o6c3+R4KScTTmghyuZnNLAQA8fO1YVaZmNVHTXVA/ZxocPegjxtOiw39ENx1i6UHCXxJ1SgTKeCe+HHE+ML8FGoY36h0Aabpfx5iRS+WFFHMI4bx8BXQtFYOR+4msqnXkE6Q2qdEPkXmTQljXt2FxCZV6L6uJ9/CVA9+T6e37hs5zR6rA0FC3VfiZBlCSfMZQZmgem2wgXdsTLtyym36Su8eAauE81+hIWmdcNlNbXnygrGNl7OZjjmuiZdTrVBE08AMpW5S7bQWxy4T+fFNtvcUzyTAI=
+      secure: s/GVWMUsYXZmc3upLcU9HQRCuGWX3V1mxaYcfIb92ixdCk6QR+LbSZY+38/OlIdCxUbshsalbFjKcHM0HT43aaJpBVd6SshB9nBLPbAiMNd6C5Wp6CATgEI3EEfkIrkDMpxYNRtYf5c+qY1skNlmdoFMuNzRjpfx8tz4+SssvAofKgr7ppXwMG4Mrq488VVOZTeuQAZOwezHmlAxoeSDHQi1sfES+0fwNS+FXNnO+S8WGVL4MYAxEn0rzaf5wZew3LZ1oJUof+t2xFB5w/m4AVbUxt7HUe8A3KuNpLlkrxEiN1uhF1rSUvTNQgFn+KLJtdQ21E7hky97eOjumJaf88it3Zp3h3F5QW6aL6UpMlmQPBJKN75gl4LZmjEZacP3sY87KIaAfvlB3anGYIGVhUOnbCBa+IxPBAH0FiiB3SA5dVNje0BT2icQHr16NiS8qT+Nvc+3QVf5byHPzcEQWmunieuQ4wLHtvDxJ27XixkgkTbwO7yiOkXXA46nbk0NtmgSn+v27bkkcACzgSEO48AjESMQnnluA+HTorj2k6pMaKM/EcMUQQIea9fM0jOdOSBO2PY2634HkdWkuA+UmtstTHc6NQEe14h53MqvXJ1Mag5gUj9uLYb9/+ImbwM3T1wRgTBoziY7Tdcj+zFEZZJjIJxKq9Z6KcxGh+eIPcs=
     organization: 3ie-epita
     space: development
     manifest: manifest.yml
@@ -25,9 +25,9 @@ deploy:
   - provider: cloudfoundry
     skip_cleanup: true
     api: https://api.run.pivotal.io
-    username: benoit.verdier@3ie.fr
+    username: pivotal.deploy@3ie.fr
     password:
-      secure: P0e70sm+D2FTdpF1RGLGwFZh5NN9h4IcqhAizaUze/ykViuoDds1P2zjdObvhAWbeuJ42SAo0qmluTuNdA+0zJcD7MVUkW+cpuHRjrn+sLrov4ORRn87yfH9p7RxhngJQad7G15HCsdxEE3xjqboJSnEc8FIqGWpTNV3d7/JKsvlmiRet9YlJd9wPpnsgh/d144572vCftiV+ICiv2VjgAN539/+7ndj9tUlhqrKf+gJCrOdtGItBXkoii23qks2fvKblBVABpapt8oj4Vd3hNMHkchw260AzeSvrGXKZTyxC3884ZJUh8tjk/ctyY1KAysLD4JsPsFHvGVmscp0EQ9EPAbLBc73LLJZ3e0UDHK1xU2ni8blUs0QhQP7+OQDReOmanaQMbhzb/o6c3+R4KScTTmghyuZnNLAQA8fO1YVaZmNVHTXVA/ZxocPegjxtOiw39ENx1i6UHCXxJ1SgTKeCe+HHE+ML8FGoY36h0Aabpfx5iRS+WFFHMI4bx8BXQtFYOR+4msqnXkE6Q2qdEPkXmTQljXt2FxCZV6L6uJ9/CVA9+T6e37hs5zR6rA0FC3VfiZBlCSfMZQZmgem2wgXdsTLtyym36Su8eAauE81+hIWmdcNlNbXnygrGNl7OZjjmuiZdTrVBE08AMpW5S7bQWxy4T+fFNtvcUzyTAI=
+      secure: s/GVWMUsYXZmc3upLcU9HQRCuGWX3V1mxaYcfIb92ixdCk6QR+LbSZY+38/OlIdCxUbshsalbFjKcHM0HT43aaJpBVd6SshB9nBLPbAiMNd6C5Wp6CATgEI3EEfkIrkDMpxYNRtYf5c+qY1skNlmdoFMuNzRjpfx8tz4+SssvAofKgr7ppXwMG4Mrq488VVOZTeuQAZOwezHmlAxoeSDHQi1sfES+0fwNS+FXNnO+S8WGVL4MYAxEn0rzaf5wZew3LZ1oJUof+t2xFB5w/m4AVbUxt7HUe8A3KuNpLlkrxEiN1uhF1rSUvTNQgFn+KLJtdQ21E7hky97eOjumJaf88it3Zp3h3F5QW6aL6UpMlmQPBJKN75gl4LZmjEZacP3sY87KIaAfvlB3anGYIGVhUOnbCBa+IxPBAH0FiiB3SA5dVNje0BT2icQHr16NiS8qT+Nvc+3QVf5byHPzcEQWmunieuQ4wLHtvDxJ27XixkgkTbwO7yiOkXXA46nbk0NtmgSn+v27bkkcACzgSEO48AjESMQnnluA+HTorj2k6pMaKM/EcMUQQIea9fM0jOdOSBO2PY2634HkdWkuA+UmtstTHc6NQEe14h53MqvXJ1Mag5gUj9uLYb9/+ImbwM3T1wRgTBoziY7Tdcj+zFEZZJjIJxKq9Z6KcxGh+eIPcs=
     organization: 3ie-epita
     space: pre-production
     manifest: manifest-preprod.yml
@@ -35,3 +35,15 @@ deploy:
       repo: 3IE/TypescriptAngularStarter
       all_branches: true
       condition: ${TRAVIS_BRANCH%%/*} == release #we check if the start of the branch name contains 'release'
+
+  - provider: cloudfoundry
+    api: https://api.eu-gb.bluemix.net
+    username: bluemix.deploy@3ie.fr
+    password:
+      secure: sK0qrwXg6FgAqutPkTbz89YoOncVCkmaKoAi2FMXb7+4FDo1qBJUBuAV0Sb3Nc2r1x1xJr6zLAj+WAFOLQzZgLPmn65V07tmVLlAqdVSxXpZDdXyHzUx5GajBhY/v+mNyt4/oLopFjYYpcXuJfEheJ3jYt9E+cx5701LVWuxgQm1rvFAbNUf6vafjNL1qq09Pw/s1QG2lYqn0N2RDZeiE9ytUJzWtnnpiWMsXekRWXZ57uAZqgDYC3/mBOFG/SeVOtaV8G/OqLI1T2YZ7z8ZbdrtX/Am+5PMzlCblhw35C4AZX8/3IV26YcTNaasz2FkxoerfmEIiAi6mfShD8d1KQRXQDZCwRJPLEIfk1ZCq3bjDIHiym4dCpANAnOC5FMy3sEkhFJBRMH+/iVjah8TR8KTTxYNJ2Dsnj+tOpJOMuieC7ZmYjTQQ2OtvZVwFlab1iPxXrRlvvIOcLoDCJMtp4lrbePSv2PJuRAT5fPzHbjxZUKQONZ6BcdNSQwADM88pK16Q53sVKS/fGrmIPRDzj7+NpSKpqcgUd8jKQK8epWycIvPx0Kd0J3RbiRUW/rYNiTIBoK626VscVuOV+Joj/saSRmZAGt4LEX+jd9Mhl9V5vynXRVytDyrBKHRk9ue1ZM/18VqjlzTUxm0/2ZefcQNX6Q0l/HTec2niwYMaXw=
+    organization: 3ie-epita
+    space: dev
+    manifest: manifest.yml
+    on:
+      repo: 3IE/TypescriptAngularStarter
+      branch: develop

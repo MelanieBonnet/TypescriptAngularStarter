@@ -12,8 +12,15 @@
     <link href="css/4-col-portfolio.css" rel="stylesheet">
     <!-- endbuild -->
 
-    <!-- build:less css/styles.css -->
+    <!-- build:less css/styles-less.css -->
     <link rel="stylesheet/less" type="text/css" href="less/styles.less">
+    <!-- endbuild -->
+    
+    <!-- build:sass css/styles-sass.css -->
+    <link href="sass/styles.scss">
+    <!-- endbuild -->
+    <!-- build:remove -->
+    <link rel="stylesheet" type="text/css" href="sass/styles.css">
     <!-- endbuild -->
 
 </head>
@@ -26,11 +33,13 @@
 <!-- endbuild -->
 
 
-<!-- build:js js/app.js -->
+<!-- build:js js/app_bower.js -->
 <script src="../bower_components/angular/angular.js"></script>
 <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 <script src="../bower_components/angular-ui-validate/dist/validate.min.js"></script>
+<!-- endbuild -->
 
+<!-- build:js js/app.js -->
 <script src="app.startup.js"></script>
 <script src="directives/ngEnter.directive.js"></script>
 <script src="controllers/home.controller.js"></script>
