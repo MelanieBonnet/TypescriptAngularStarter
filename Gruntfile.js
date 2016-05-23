@@ -35,20 +35,6 @@ module.exports = function (grunt) {
 		context.outFiles = [block.dest];
 		return cfg;
 	};
-	
-	var sassCreateConfig = function (context, block) {
-		var cfg = { files: [] }, 
-			outfile = path.join(context.outDir, block.dest),
-			filesDef = {};
-		filesDef.dest = outfile;
-		filesDef.src = []; 
-		context.inFiles.forEach(function (inFile) {
-			filesDef.src.push(path.join(context.inDir, inFile));
-		});
-		cfg.files.push(filesDef);
-		context.outFiles = [block.dest];
-		return cfg;
-	};
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
@@ -94,10 +80,6 @@ module.exports = function (grunt) {
 						'less': [{
 							name: 'less',
 							createConfig: lessCreateConfig
-						}],
-						'sass': [{
-							name: 'sass',
-							createConfig: sassCreateConfig
 						}]
 					},
 					post: {}
@@ -107,9 +89,12 @@ module.exports = function (grunt) {
 		less: {
 			options: { }
 		},
-		sass: {
-			options: {
-				outputStyle: 'compressed'
+		compass: {
+			dist: {
+				options: {
+					config: 'config.rb',
+					cssDir: '../<%= globalCfg.distDir %>/app/css'
+				}
 			}
 		},
 		postcss: {
@@ -208,7 +193,7 @@ module.exports = function (grunt) {
 		'copy',
 		'useminPrepare',
 		'less:generated',
-		'sass:generated',
+		'compass',
 		'concat:generated',
 		'uglify:generated',
 		'filerev',
