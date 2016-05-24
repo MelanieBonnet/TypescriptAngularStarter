@@ -93,7 +93,7 @@ module.exports = function (grunt) {
 			dist: {
 				options: {
 					config: 'config.rb',
-					cssDir: '../<%= globalCfg.distDir %>/app/css'
+					cssDir: '<%= globalCfg.distDir %>/app/css'
 				}
 			}
 		},
