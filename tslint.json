@@ -6,7 +6,25 @@
 			"arguments",
 			"statements"
 		],
-		"ban": false,
+		"ban": [
+			true,
+			[
+				"_",
+				"forEach"
+			],
+			[
+				"_",
+				"each"
+			],
+			[
+				"$",
+				"each"
+			],
+			[
+				"angular",
+				"forEach"
+			]
+		],
 		"class-name": true,
 		"comment-format": [
 			true,
@@ -20,7 +38,10 @@
 			true,
 			"tabs"
 		],
-		"interface-name": true,
+		"interface-name": [
+			true,
+			"always-prefix"
+		],
 		"jsdoc-format": true,
 		"label-position": true,
 		"label-undefined": true,
@@ -31,10 +52,11 @@
 		"member-access": true,
 		"member-ordering": [
 			true,
-			"public-before-private",
-			"static-before-instance",
-			"variables-before-functions"
+			{
+				"order": "fields-first"
+			}
 		],
+		"new-parens": true,
 		"no-angle-bracket-type-assertion": true,
 		"no-any": false,
 		"no-arg": true,
@@ -52,13 +74,19 @@
 		"no-construct": true,
 		"no-constructor-vars": true,
 		"no-debugger": true,
+		"no-default-export": true,
 		"no-duplicate-key": true,
 		"no-duplicate-variable": true,
 		"no-empty": true,
 		"no-eval": true,
 		"no-inferrable-types": false,
 		"no-internal-module": true,
+		"no-invalid-this": [
+			true,
+			"check-function-in-method"
+		],
 		"no-null-keyword": true,
+		"no-reference": false,
 		"no-require-imports": true,
 		"no-shadowed-variable": true,
 		"no-string-literal": true,
@@ -78,6 +106,9 @@
 			"check-else",
 			"check-finally",
 			"check-whitespace"
+		],
+		"one-variable-per-declaration": [
+			false
 		],
 		"quotemark": [
 			true,
@@ -99,7 +130,7 @@
 		],
 		"triple-equals": [
 			true,
-			"allow-null-check"
+			"allow-undefined-check"
 		],
 		"typedef": [
 			true,
@@ -107,7 +138,6 @@
 			"parameter",
 			"arrow-parameter",
 			"property-declaration",
-			"variable-declaration",
 			"member-variable-declaration"
 		],
 		"typedef-whitespace": [
@@ -118,8 +148,16 @@
 				"parameter": "nospace",
 				"property-declaration": "nospace",
 				"variable-declaration": "nospace"
+			},
+			{
+				"call-signature": "space",
+				"index-signature": "space",
+				"parameter": "space",
+				"property-declaration": "space",
+				"variable-declaration": "space"
 			}
 		],
+		"use-isnan": true,
 		"use-strict": [
 			true,
 			"check-module",
