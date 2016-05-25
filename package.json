@@ -1,7 +1,7 @@
 {
 	"name": "TypescriptAngularStarter",
 	"private": true,
-	"version": "0.5.1",
+	"version": "0.5.2",
 	"description": "Starter kit using angular with typescript",
 	"repository": {
 		"type": "git",
