@@ -1,8 +1,8 @@
 language: node_js
 node_js:
-  - "stable"
+  - "4"
 before_script:
-  - npm install grunt-cli -g
+  - gem install compass
 notifications:
   email:
     on_success: change
