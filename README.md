@@ -16,7 +16,7 @@ Dependecies :
 When these prerequisites are installed, to initialize the solution you must go to the solution root directory and run this command :
 
 ```sh
-npm install
+$ npm install
 ```
 
 ## Development
@@ -28,7 +28,7 @@ In order to understand this architecture project, you should read this [blog art
 To add a package and save it to your bower config file, run this command :
 
 ```sh
-bower install <package-name> --save
+b$ ower install <package-name> --save
 ```
 
 ## Useful commands
@@ -36,24 +36,31 @@ bower install <package-name> --save
 Build the website :
 
 ```sh
-grunt build
+$ grunt build
 ```
 
 Launch the website :
 
 ```sh
-grunt web
+$ grunt web
 ```
 
 Test the website (tslint+karma) :
 
 ```sh
-grunt testing
+$ grunt testing
 ```
 
-# Useful links #
+# Useful stuff #
 Access the website locally :
 
 ```html
 http://localhost:5000/
+```
+
+Find newer versions of package dependencies than what your package.json or bower.json allows
+```sh
+$ npm install -g npm-check-updates
+$ ncu          #check your package.json
+$ ncu -m bower #check your bower.json
 ```
