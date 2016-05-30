@@ -39,6 +39,11 @@ module.exports = function (grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		globalCfg: globalCfg,
+		newer: {
+			options: {
+				cache: '.grunt-newer-cache'
+			}
+		},
 		ts: {
 			default: {
 				src: '<%= globalCfg.src.tsFiles %>',
@@ -75,7 +80,7 @@ module.exports = function (grunt) {
 				//this custom flow allows usemin to support less
 				flow: {
 					steps: {
-						'js': ['concat', 'uglify'],
+						'js': ['uglify', 'concat'],
 						'css': ['concat'],
 						'less': [{
 							name: 'less',
@@ -172,8 +177,8 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('compile', [
 		'clean',
-		'tslint',
-		'ts',
+		'newer:tslint',
+		'newer:ts',
 	]);
 
 	grunt.registerTask('buildinfo', 'generate buildinfo file', function () {
@@ -194,8 +199,8 @@ module.exports = function (grunt) {
 		'useminPrepare',
 		'less:generated',
 		'compass',
+		'newer:uglify:generated',
 		'concat:generated',
-		'uglify:generated',
 		'filerev',
 		'usemin',
 		'postcss'
