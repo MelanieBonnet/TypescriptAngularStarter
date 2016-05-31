@@ -14,7 +14,9 @@ module.exports = function (grunt) {
 			staticMiscFiles: ['index.html', 'app/**/*.{html,json}', 'app/img/**'],
 			staticFontFiles: ['bower_components/bootstrap/dist/fonts/**']
 		},
-		distDir: 'dist/'
+		distDir: 'dist/',
+		gruntNewerCacheDir: '.grunt-newer-cache',
+		useminTempDir: '.tmp-app'
 	};
 	
 	//less config function for usemin
@@ -41,7 +43,7 @@ module.exports = function (grunt) {
 		globalCfg: globalCfg,
 		newer: {
 			options: {
-				cache: '.grunt-newer-cache'
+				cache: '<%= globalCfg.gruntNewerCacheDir %>'
 			}
 		},
 		ts: {
@@ -75,6 +77,7 @@ module.exports = function (grunt) {
 			//html file that usemin is going to analyse to find the files to process
 			html: 'app/index.html',
 			options: {
+				staging: '<%= globalCfg.useminTempDir %>',
 				//destination folder that usemin is going to use to output the processed files (for .js and .css for example)
 				dest: '<%= globalCfg.distDir %>/app/',
 				//this custom flow allows usemin to support less
@@ -159,8 +162,10 @@ module.exports = function (grunt) {
 		clean: {
 			public: [
 				'<%= globalCfg.src.generatedJSFiles %>',
-				'<%= globalCfg.distDir %>/**'
-			]
+				'<%= globalCfg.gruntNewerCacheDir %>',
+				'<%= globalCfg.useminTempDir %>'
+			],
+			dist: ['<%= globalCfg.distDir %>/**',]
 		},
 		connect: {
 			dev: {
@@ -176,9 +181,12 @@ module.exports = function (grunt) {
 	});
 
 	grunt.registerTask('compile', [
-		'clean',
 		'newer:tslint',
 		'newer:ts',
+	]);
+
+	grunt.registerTask('cleanproject', [
+		'clean',
 	]);
 
 	grunt.registerTask('buildinfo', 'generate buildinfo file', function () {
@@ -188,11 +196,13 @@ module.exports = function (grunt) {
 		grunt.file.write(filePath, JSON.stringify(info));
 		grunt.log.ok(filePath + ' generated');
 	});
+
 	grunt.registerTask('test', [
 		'compile',
 		'karma:continuous',
 	]);
 	grunt.registerTask('build', [
+		'clean:dist',
 		'compile',
 		'buildinfo',
 		'copy',
