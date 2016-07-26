@@ -15,7 +15,8 @@ module.exports = function (grunt) {
 			staticFontFiles: ['bower_components/bootstrap/dist/fonts/**']
 		},
 		distDir: 'dist/',
-		gruntNewerCacheDir: '.grunt-newer-cache',
+		//be sure to change the values of 'gruntNewerCacheDir' and 'useminTempDir' if you have multiple grunt files in your project
+		gruntNewerCacheDir: '.grunt-newer-cache-app',
 		useminTempDir: '.tmp-app'
 	};
 	

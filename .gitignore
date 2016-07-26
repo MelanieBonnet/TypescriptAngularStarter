@@ -45,5 +45,5 @@ test/**/*.js.map
 
 .tmp
 .sass-cache
-.grunt-newer-cache
+.grunt-newer-cache-app
 .tmp-app
