@@ -13,6 +13,8 @@ Dependecies :
 
 * [Bower](http://www.bower.io)
 
+* [Compass](http://compass-style.org)
+
 When these prerequisites are installed, to initialize the solution you must go to the solution root directory and run this command :
 
 ```sh
@@ -28,7 +30,21 @@ In order to understand this architecture project, you should read this [blog art
 To add a package and save it to your bower config file, run this command :
 
 ```sh
-b$ ower install <package-name> --save
+$ bower install <package-name> --save
+```
+
+### Sass :
+
+To see your sass change sin build project, you can lauch sassWatcher.rb in the solution root directory and run this command :
+
+```sh
+$ ruby sassWatcher.rb app/
+```
+
+If your project contains multiple targets, you can add multiple folder name :
+
+```sh
+$ ruby sassWatcher.rb <folder_1> <folder_2>
 ```
 
 ## Useful commands

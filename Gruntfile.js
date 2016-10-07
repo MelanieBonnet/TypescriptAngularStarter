@@ -101,7 +101,7 @@ module.exports = function (grunt) {
 		compass: {
 			dist: {
 				options: {
-					config: 'config.rb',
+					config: 'app/config.rb',
 					cssDir: '<%= globalCfg.distDir %>/app/css'
 				}
 			}
