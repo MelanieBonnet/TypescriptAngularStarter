@@ -1,0 +1,15 @@
+# CircleCi file
+# https://circleci.com/docs/configuration/
+
+## Customize the test machine
+machine:
+  # Version of ruby to use
+  ruby:
+    version:
+      2.2.3
+
+## Customize dependencies
+dependencies:
+  pre:
+    - gem install compass
+
