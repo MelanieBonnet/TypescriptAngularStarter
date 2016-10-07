@@ -102,14 +102,15 @@ module.exports = function (grunt) {
 			dist: {
 				options: {
 					config: 'app/config.rb',
-					cssDir: '<%= globalCfg.distDir %>/app/css'
+					basePath: 'app',
+					cssDir: '../<%= globalCfg.distDir %>/app/css'
 				}
 			}
 		},
 		postcss: {
 			options: {
 				processors: [
-        			require('autoprefixer')({browsers: 'last 2 versions'}), // add vendor prefixes
+        			require('autoprefixer')({browsers: ['last 2 versions']}), // add vendor prefixes
         			require('cssnano')() // minify the result
 					]
 				},

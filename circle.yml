@@ -12,4 +12,5 @@ machine:
 dependencies:
   pre:
     - gem install compass
+    - npm install -g postcss-cli autoprefixer
 
