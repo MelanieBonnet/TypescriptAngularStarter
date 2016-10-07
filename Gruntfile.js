@@ -3,7 +3,8 @@
 module.exports = function (grunt) {
 	// load all grunt tasks without explicitly referecing them
 	require('jit-grunt')(grunt, {
-		useminPrepare: 'grunt-usemin'
+		useminPrepare: 'grunt-usemin',
+		postcss: 'grunt-postcss'
 	});
 
 	var path = require('path');
@@ -113,10 +114,10 @@ module.exports = function (grunt) {
         			require('autoprefixer')({browsers: ['last 2 versions']}), // add vendor prefixes
         			require('cssnano')() // minify the result
 					]
-				},
-				dist: {
-      				src: '<%= globalCfg.distDir %>/app/css/*.css'
-    			}
+			},
+			dist: {
+				src: '<%= globalCfg.distDir %>/app/css/*.css'
+			}
   		},
 		uglify: {
 			options: {
