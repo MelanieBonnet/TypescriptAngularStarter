@@ -4,7 +4,8 @@ module.exports = function (grunt) {
 	// load all grunt tasks without explicitly referecing them
 	require('jit-grunt')(grunt, {
 		useminPrepare: 'grunt-usemin',
-		postcss: 'grunt-postcss'
+		postcss: 'grunt-postcss',
+		compass: 'grunt-contrib-compass'
 	});
 
 	var path = require('path');
